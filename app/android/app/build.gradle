@@ -81,3 +81,10 @@ android {
 flutter {
     source = "../.."
 }
+
+// Ensure Kotlin compiler targets Java 1.8 to match Javac
+tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
